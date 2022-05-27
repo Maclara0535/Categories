@@ -33,14 +33,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
 
-                    @if (Auth::check())
-
-                    <ul class="navbar-nav me-auto">
-                    <a class="nav-link" href="{{ route('categories.index') }}">{{ __('Categories') }}</a>
-
-                    </ul>
-                    
-                    @endif
+                    @auth
+                        <ul class="navbar-nav me-auto">
+                            <a class="nav-link" href="{{ route('categories.index') }}">{{ __('Categories') }}</a>
+                        </ul>
+                    @endauth
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
